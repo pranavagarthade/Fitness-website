@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Schedule</title>
+    <link rel="stylesheet" href="/views/CSS/plan.css">
+    <link rel="shortcut icon" href="img/web yoga icon.png" type="image/x-icon">
+
+</head>
+<body>
+    <div class="container-wrapper">
+        <div class="container">
+            <h1>Daily Schedule</h1>
+            <form action="/addInfo/<%= user._id%>" method="post">
+                <label for="morning">Morning (8:00 AM - 8:30 AM)</label>
+                <input type="text" id="morning" name="morning" >
+                
+                <label for="midMorning">Mid-Morning (10:00 AM)</label>
+                <input type="text" id="midMorning" name="midMorning" >
+                
+                <label for="lunch">Lunch (12:00 PM)</label>
+                <input type="text" id="lunch" name="lunch" >
+                
+                <label for="afternoon">Afternoon (2:00 PM)</label>
+                <input type="text" id="afternoon" name="afternoon" >
+                
+                <label for="snack">Snack (4:00 PM)</label>
+                <input type="text" id="snack" name="snack" >
+                
+                <label for="evening">Evening (6:00 PM)</label>
+                <input type="text" id="evening" name="evening" >
+                
+                <label for="dinner">Dinner (8:00 PM)</label>
+                <input type="text" id="dinner" name="dinner" >
+    
+                <label for="notes">Additional Notes</label>
+                <textarea id="notes" name="notes" rows="4"></textarea>
+    
+                
+                <input type="submit" value="Submit">
+            </form>
+            <a href="/admin">Back to User Information</a>
+        </div>
+
+        <div class="cont">
+            <section class="about" id="about">
+                <h1>Previous Diet <span>Plan</span></h1>
+                <table class="plancss">
+                    <tr>
+                        <th><span>Morning (8:00 AM - 8:30 AM):</span></th>
+                        <td>
+                            <%= user.morning %>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><span>Mid-Morning (10:00 AM):</span></th>
+                        <td>
+                            <%= user.midMorning %>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><span>Lunch (12:00 PM):</span></th>
+                        <td>
+                            <%= user.lunch %>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><span>Afternoon (2:00 PM):</span></th>
+                        <td>
+                            <%= user.afternoon %>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><span>Snack (4:00 PM):</span></th>
+                        <td>
+                            <%= user.snack %>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><span>Evening (6:00 PM):</span></th>
+                        <td>
+                            <%= user.evening %>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><span>Dinner (8:00 PM):</span></th>
+                        <td>
+                            <%= user.dinner %>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><span>Additional Notes:</span></th>
+                        <td>
+                            <%= user.notes %>
+                        </td>
+                    </tr>
+                </table>
+            </section>
+        </div>
+    </div>
+</body>
+</html>

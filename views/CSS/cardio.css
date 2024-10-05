@@ -1,0 +1,64 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, a {
+    text-decoration: none;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.benefits {
+    margin-top: 50px;
+    background-color: #f5dbd0; /* Attractive Salmon color for benefits background */
+    padding: 50px 0;
+    border-radius: 15px;
+}
+
+.benefits-text {
+    position: relative;
+    top: 10%;
+    left: 0;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #333; /* Dark text color */
+}
+
+img.img-fluid {
+    border-radius: 10%;
+    margin-top: 20px;
+}
+
+.exercise-types ul li {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #666; /* Slightly darker text color */
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+.section-heading h2 {
+    color: #007BFF; /* Blue color for section headings */
+}
+
+.services-box {
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+}
+
+.services-box:hover {
+    transform: scale(1.05);
+}
+
+.benefits-img img {
+    border-radius: 10px;
+}

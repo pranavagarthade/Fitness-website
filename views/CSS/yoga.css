@@ -1,0 +1,101 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a
+{
+    text-decoration: none;
+    display: inline-block;
+}
+ul
+{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.benefits {
+    margin-top: 50px;
+    background-color: #f0e7f9; /* Light gray background */
+    padding: 40px; /* Add some padding for better content separation */
+    border-radius: 15px; /* Rounded corners */
+}
+
+.benefits-text {
+    position: relative;
+    top: 10%;
+    left: 0;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #333; /* Dark text color */
+}
+
+img.img-fluid {
+    border-radius: 10%;
+    margin-top: 20px;
+}
+
+
+
+.exercise-types ul li {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #666; /* Slightly darker text color */
+}
+
+.thumb{
+
+    height: 200px;
+    width: 300px;
+}
+ 
+
+body {
+    font-family: 'Arial', sans-serif;
+  }
+  .section-heading h2 {
+    color: #007BFF; /* Blue color for section headings */
+  }
+
+  .services-box {
+     /* Green border for services boxes */
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .services-box:hover {
+    transform: scale(1.05);
+    /* Darker green on hover */
+  }
+
+  .benefits {
+    background-color: #f5dbd0; /* Attractive Salmon color for benefits background */
+    padding: 50px 0;
+  }
+
+  .benefits-text {
+    color: #333;
+  }
+
+  .benefits-img img {
+    border-radius: 10px;
+  }
+
+  .exercise-types ul {
+    list-style-type: none;
+  }
+
+  .exercise-types li {
+    padding: 5px 0;
+    color: #f5d4d3; /* Red color for exercise types */
+  }

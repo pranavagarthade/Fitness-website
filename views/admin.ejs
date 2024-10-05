@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <title>
+
+    </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <link rel="stylesheet" href="/views/CSS/admin.css">
+    <link rel="shortcut icon" href="img/web yoga icon.png" type="image/x-icon">
+
+</head>
+
+<body>
+    <div id="menu-bars" class="fas fa-bars"></div>
+    <header>
+        <img src="/img/web yoga icon.png" alt="image">
+        <a href="#" class="logo"><span>Geetanjali</span> fitness</a>
+        <nav class="navbar">
+            <a href="#dashboard">Dashboard</a>
+            <a href="#subscribedusers">Subscribed User </a>
+            <a href="#allusers">All User</a>
+            <a href="#usersquery">User Query</a>
+        </nav>
+        <div class="follow">
+            <a href="logout">Logout</a>
+        </div>
+    </header>
+    <section id="dashboard">
+        <div class="section__data">
+
+            <div class="section__titles">
+                <h1 class="section__title-border"> WELCOME TO </h1>
+                <h1 class="section__title">ADMIN DASHBOARD</h1>
+            </div>
+        </div>
+        <div class="card-list">
+            <a href="#" class="card-item">
+                <img src="/img/premiumuser.png" alt="Card Image">
+                <span class="developer">Subscribed Users</span>
+                <h1>
+                    <%= userCount %>
+                </h1>
+            </a>
+            <a href="#" class="card-item">
+                <img src="/img/totaluser.png" alt="Card Image">
+                <span class="designer">Total users</span>
+                <h1>
+                    <%= totalUserCount %>
+                </h1>
+
+            </a>
+            <a href="#" class="card-item">
+                <img src="/img/doubt.jpeg" alt="Card Image">
+                <span class="designer">New users Query</span>
+                <h1>
+                    <%= queryUserCount %>
+                </h1>
+
+            </a>
+            <a href="#" class="card-item">
+                <img src="/img/excle.jpg" alt="Card Image">
+                <span class="editor">Excel Download</span>
+
+                <div class="arrow" id="downloadExcelButton">
+
+                    <i class="fas fa-download card-icon"></i>
+
+                </div>
+
+            </a>
+        </div>
+    </section>
+
+    <section id="subscribedusers">
+        <div class="section__data">
+            <div class="section__titles">
+                <h1 class="section__title-border"> SUBSSCRIBED USER</h1>
+                <h1 class="section__title">INFORMATION</h1>
+            </div>
+        </div>
+
+        <div class="table-container">
+            <table id="subscribedusers">
+
+                <thead>
+                    <tr>
+                        <th>sno</th>
+                        <th>Full Name</th>
+                        <th>Date of Birth</th>
+                        <th>Email</th>
+                        <th>Mobile Number</th>
+                        <th>Gender</th>
+                        <th>Occupation</th>
+                        <th>Address Type</th>
+                        <th>Nationality</th>
+                        <th>State</th>
+                        <th>District</th>
+                        <th>House Number</th>
+                        <th>Pin Code</th>
+                        <th>Exercise Intensity</th>
+                        <th>Goal</th>
+                        <th>Food Habit</th>
+                        <th>Physical Activity</th>
+                        <th>Medical History</th>
+                        <th>Current Medication</th>
+                        <th>Health Issues</th>
+                        <th>Expectation from Consultation</th>
+                        <th>Measurements</th>
+                        <th>Daily Workout</th>
+                        <th>Workout Days Per Week</th>
+                        <th>Exercise Contraindication</th>
+                        <th>Plan</th>
+                        <th>Starting Date</th>
+                        <th>Expiary Date</th>
+                        <th>Action </th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <% users.forEach(function(user,index) { %>
+
+                        <% if (["basic", "premium" , "diamond" ].includes(user.plan)) { %>
+
+                            <tr>
+                                <td>
+                                    <%=index+1 %>
+                                </td>
+                                <td>
+                                    <%= user.fullName || user.displayName || user.username %>
+                                </td>
+
+                                <td>
+                                    <%= user.dateOfBirth %>
+                                </td>
+                                <td>
+                                    <%= user.email %>
+                                </td>
+                                <td>
+                                    <%= user.mobileNumber %>
+                                </td>
+                                <td>
+                                    <%= user.gender %>
+                                </td>
+                                <td>
+                                    <%= user.occupation %>
+                                </td>
+                                <td>
+                                    <%= user.addressType %>
+                                </td>
+                                <td>
+                                    <%= user.nationality %>
+                                </td>
+                                <td>
+                                    <%= user.state %>
+                                </td>
+                                <td>
+                                    <%= user.district %>
+                                </td>
+                                <td>
+                                    <%= user.houseNumber %>
+                                </td>
+                                <td>
+                                    <%= user.pinCode %>
+                                </td>
+                                <td>
+                                    <%= user.exerciseIntensity %>
+                                </td>
+                                <td>
+                                    <%= user.goal %>
+                                </td>
+                                <td>
+                                    <%= user.foodHabit %>
+                                </td>
+                                <td>
+                                    <%= user.physicalActivity %>
+                                </td>
+                                <td>
+                                    <%= user.medicalHistory %>
+                                </td>
+                                <td>
+                                    <%= user.currentMedication %>
+                                </td>
+                                <td>
+                                    <%= user.healthIssues %>
+                                </td>
+                                <td>
+                                    <%= user.expectationFromConsultation %>
+                                </td>
+                                <td>
+                                    <%= user.measurements %>
+                                </td>
+                                <td>
+                                    <%= user.dailyWorkout %>
+                                </td>
+                                <td>
+                                    <%= user.workoutDaysPerWeek %>
+                                </td>
+                                <td>
+                                    <%= user.exerciseContraindication %>
+                                </td>
+                                <td>
+                                    <%= user.subscription.plan %>
+                                </td>
+                                <td>
+                                    <%= user.subscription.startDate %>
+                                </td>
+                                <td>
+                                    <%= user.subscription.endDate %>
+                                </td>
+
+                                <td>
+                                    <a class="button" href="/edit/<%= user._id %>">Edit</a>
+                                </td>
+
+                            </tr>
+                            <% userCount++; %>
+                                <% } %>
+                                    <% }); %>
+                </tbody>
+            </table>
+            <div class="pagination">
+                <button class="prevPage" data-table="subscribedusers">Previous</button>
+                <button class="nextPage" data-table="subscribedusers">Next</button>
+            </div>
+
+        </div>
+
+    </section>
+    <section id="allusers">
+        <div class="section__data">
+            <div class="section__titles">
+                <h1 class="section__title-border"> All(LOGIN) USER</h1>
+                <h1 class="section__title">INFORMATION</h1>
+            </div>
+        </div>
+
+        <div class="table-container">
+            <table id="allusers">
+
+                <thead>
+                    <tr>
+                        <th>Sr no.</th>
+                        <th>User name</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <% users.forEach(function(user,index) { %>
+                        <tr>
+                            <td>
+                                <%=index+1 %>
+                            </td>
+                            <td>
+                                <%= user.fullName || user.displayName || user.username %>
+                            </td>
+
+
+                            <td>
+                                <%= user.email %>
+                            </td>
+                        </tr>
+                        <% }); %>
+                </tbody>
+            </table>
+            <div class="pagination">
+                <button class="prevPage" data-table="allusers">Previous</button>
+                <button class="nextPage" data-table="allusers">Next</button>
+            </div>
+
+        </div>
+
+    </section>
+    <section id="usersquery">
+        <div class="section__data">
+            <div class="section__titles">
+                <h1 class="section__title-border"> SUBSSCRIBED USER</h1>
+                <h1 class="section__title">QUERY</h1>
+            </div>
+        </div>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>SNo</th>
+                        <th>Full Name</th>
+                        <th>Mobile Number</th>
+                        <th>Query</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% users.forEach(function(user, index) { %>
+                        <% if (user.query) { %>
+                            <tr>
+                                <td>
+                                    <%= index + 1 %>
+                                </td>
+                                <td>
+                                    <%= user.fullName || user.displayName || user.username %>
+                                </td>
+                                <td>
+                                    <%= user.mobileNumber %>
+                                </td>
+                                <td>
+                                    <%= user.query %>
+                                </td>
+                                <td>
+                                    <form action="/remove-query/<%= user._id %>" method="POST">
+                                        <button class="button" type="submit">Remove</button>
+                                    </form>
+                                </td>
+                            </tr>
+                            <% } %>
+                                <% }); %>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <script src="/views/JS/admin.js"></script>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/exceljs/4.2.0/exceljs.min.js"></script>
+   
+
+
+</body>
+
+
+</html>

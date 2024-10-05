@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- FAVICON -->
+    <link rel="shortcut icon" href="img/web yoga icon.png" type="image/x-icon">
+    <!-- REMIXION -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <!-- REVIEW FUNCTIONALITY -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.1/assets/owl.carousel.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.1/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" href="/views/CSS/index.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+    <!-- CSS -->
+
+    <title>Geetanjali fitness</title>
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="#" class="nav__logo">
+                <img src="img/new yoga icon.png" alt="logo">Geetanjali Fitness
+            </a>
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="#home" class="nav__link">Home</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#program" class="nav__link">Program</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#choose" class="nav__link">Choose</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#about" class="nav__link">About</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#pricing" class="nav__link">Pricing</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#review" class="nav__link">Review</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="/account" class="nav__link">Dashboard</a>
+                    </li>
+                    <div class="nav__link">
+                        <% if (isLoggedIn) { %>
+                            <a href="/logout" class="button nav__button">
+                                Logout
+                            </a>
+                        <% } else { %>
+                            <form action="/mytemplate" method="get">
+                                <button type="submit" class="button nav__button myButton" data-notification-text="Register on our Website✌️">
+                                    Register
+                                </button>
+                            </form>
+                        <% } %>
+                    </div>
+
+                </ul>
+                <div class="nav__close" id="nav-close">
+                    <i class="ri-close-line"></i>
+                </div>
+            </div>
+            <!-- TOGGLE BAR -->
+            <div class="nav__toggle" id="nav-toggle">
+                <i class="ri-menu-line"></i>
+            </div>
+        </nav>
+    </header>
+    <!-- MAIN -->
+    <main class="main">
+        <!-- HOME -->
+        <section class="home section" id="home">
+            <div class="home__container container grid">
+                <div class="home__data">
+                    <h2 class="home__subtitle">MAKE YOUR</h2>
+                    <h1 class="home__title">BODY SHAPE</h1>
+                    <p class="home__description">
+                        In here we will help you to shape and build your ideal
+                        body and live your life to the fullest.
+                    </p>
+                    <% if (isLoggedIn) { %>
+                        <a href="/account" class="button button__flex">
+                            Get Started  <i class="ri-arrow-right-line"></i>
+                        </a>
+                    <% } else { %>
+                        <form action="/login" method="get">
+                            <button type="submit" class="button button__flex myButton" data-notification-text="Get Logined Here✌️" >
+                                Get Started  <i class="ri-arrow-right-line"></i>
+                            </button>
+                        </form>
+                        <% } %>
+                </div>
+                <div class="home__images">
+                    <img src="img/home-img.png" alt="home image" class="home__img">
+                    <div class="home__triangle home__triangle-3"></div>
+                    <div class="home__triangle home__triangle-2"></div>
+                    <div class="home__triangle home__triangle-1"></div>
+                </div>
+            </div>
+        </section>
+       <!-- PROGRAM -->
+       <section class="program section" id="program">
+        <div class="container">
+            <div class="section__data">
+                <h2 class="section__subtitle">Our Program</h2>
+                <div class="section__titles">
+                    <h1 class="section__title-border">BUILD YOUR</h1>
+                    <h1 class="section_title">BEST BODY</h1>
+                </div>
+            </div>
+            <div class="program__container grid">
+                <article class="program__card">
+                    <div class="program__shape">
+                        <img src="img/exercise.png" alt="program image" class="program__img">
+                    </div>
+                    <h3 class="program__title">Exercise</h3>
+                    <p class="program__description">
+                        "Creating tension that's temporarly making the muscle
+                        fibers smaller or contractes."
+                    </p>
+                    <button class="progbutt">
+                        <a href="/exercise" class="program__button">
+                            <i class="ri-arrow-right-line"></i>
+                        </a>
+                    </button>
+                </article>
+                <article class="program__card">
+                    <div class="program__shape">
+                        <img src="img/yoga1.png" alt="program image" class="program__img">
+                    </div>
+                    <h3 class="program__title">Yoga</h3>
+                    <p class="program__description">
+                        "Yoga promotes balance,strength, flexibility, mindfulness, and inner peace for all."
+                    </p>
+                    <button class="progbutt">
+                        <a href="/yoga" class="program__button">
+                            <i class="ri-arrow-right-line"></i>
+                        </a>
+                    </button>
+                </article>
+                <article class="program__card">
+                    <div class="program__shape">
+                        <img src="img/yoga.png" alt="program image" class="program__img">
+                    </div>
+                    <h3 class="program__title">Meditation</h3>
+                    <p class="program__description">
+                        "Meditation calms the mind, reduces stress, and fosters inner tranquility."
+                    </p>
+                    <button class="progbutt">
+                        <a href="/meditation" class="program__button">
+                            <i class="ri-arrow-right-line"></i>
+                        </a>
+                    </button>
+                </article>
+                <article class="program__card">
+                    <div class="program__shape">
+                        <img src="img/weight.png" alt="program image" class="program__img">
+                    </div>
+                    <h3 class="program__title">Weight Lifting</h3>
+                    <p class="program__description">
+                        "Weight lifting builds strength, muscle, and endurance for a healthier you."
+                    </p>
+                    <button class="progbutt">
+                        <a href="/weight" class="program__button">
+                            <i class="ri-arrow-right-line"></i>
+                        </a>
+                    </button>
+                </article>
+            </div>
+        </div>
+        <br>
+
+
+        <div class="container">
+            <div class="program__container grid">
+                <article class="program__card">
+                    <div class="program__shape">
+                        <img src="img/trataka.jpg" alt="program image" class="program__img">
+                    </div>
+                    <h3 class="program__title">Trataka</h3>
+                    <p class="program__description">
+                        "Trataka enhances focus, concentration, and mental clarity through candle gazing."
+                    </p>
+                    <button class="progbutt">
+                        <a href="/trataka" class="program__button">
+                            <i class="ri-arrow-right-line"></i>
+                        </a>
+                    </button>
+                </article>
+                <article class="program__card">
+                    <div class="program__shape">
+                        <img src="img/cardio.png" alt="program image" class="program__img">
+                    </div>
+                    <h3 class="program__title">Cardio</h3>
+                    <p class="program__description">
+                        "Cardio workouts improve heart health, stamina, and overall fitness levels."
+                    </p>
+                    <button class="progbutt">
+                        <a href="/cardio" class="program__button">
+                            <i class="ri-arrow-right-line"></i>
+                        </a>
+                    </button>
+                </article>
+                <article class="program__card">
+                    <div class="program__shape">
+                        <img src="img/pranayam.png" alt="program image" class="program__img">
+                    </div>
+                    <h3 class="program__title">Pranayam</h3>
+                    <p class="program__description">
+                        "Pranayama enhances breath control, vitality,and inner peace through breathing techniques."
+                    </p>
+                    <button class="progbutt">
+                        <a href="/pranayam" class="program__button">
+                            <i class="ri-arrow-right-line"></i>
+                        </a>
+                    </button>
+                </article>
+                <article class="program__card">
+                    <div class="program__shape">
+                        <img src="img/laghu1.png" alt="program image" class="program__img">
+                    </div>
+                    <h3 class="program__title">Laghu shankha Prakshalana</h3>
+                    <p class="program__description">
+                        "Laghu Shankha Prakshalana cleanses the digestive system through specific yoga practice."
+                    </p>
+                    <button class="progbutt">
+                        <a href="/laghu" class="program__button">
+                            <i class="ri-arrow-right-line"></i>
+                        </a>
+                    </button>
+                </article>
+            </div>
+        </div>
+    </section>
+        <!-- CHOOSE US -->
+        <section class="choose section" id="choose">
+            <div class="choose__overflow">
+                <div class="choose__container container grid">
+                    <div class="choose__content">
+                        <div class="section__data">
+                            <h2 class="section__subtitle">Best Reason</h2>
+                            <div class="section__titles">
+                                <h1 class="section__title-border">WHY</h1>
+                                <h1 class="section__title">CHOOSE US ?</h1>
+                            </div>
+                        </div>
+
+                        <p class="choose__description">
+                            Choose your favourite class and start now. Remeber the
+                            only bad workout is the one you didn't do.
+                        </p>
+
+                        <div class="choose__data">
+                            <div class="choose__group">
+                                <h3 class="choose__number">100+</h3>
+                                <p class="choose__subtitle">Toltal Members</p>
+                            </div>
+                            <div class="choose__group">
+                                <h3 class="choose__number">12+ years</h3>
+                                <p class="choose__subtitle">Work Experience</p>
+                            </div>
+                            <div class="choose__group">
+                                <h3 class="choose__number">25+</h3>
+                                <p class="choose__subtitle">Programs</p>
+                            </div>
+                            <div class="choose__group">
+                                <h3 class="choose__number">5+</h3>
+                                <p class="choose__subtitle">Awards</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="choose__images">
+                        <img src="img/choose-img.png" alt="choose image" class="choose__img">
+
+                        <div class="choose__triangle choose__triangle-1"></div>
+                        <div class="choose__triangle choose__triangle-2"></div>
+                        <div class="choose__triangle choose__triangle-3"></div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <!-- ABOUT US -->
+        <section id="about">
+            <div class="section__data">
+                <h2 class="section__subtitle">About Us</h2>
+                <div class="section__titles">
+                    <h1 class="section__title-border">GET TO</h1>
+                    <h1 class="section__title">KNOW US</h1>
+                </div>
+            </div>
+            <div class="about-row">
+                <div class="about-left-col">
+                    <p id="p-title">I am a Gym Trainer</p>
+                    <p>
+                        A certified fitness trainer who has successfully completed the
+                        demanding K11 Fitness Academy program. Geetanjali specializes in training women to reach their
+                        fitness goals, drawing upon her extensive knowledge of anatomy, physiology, and nutrition. Her
+                        K11 certification is a testament to her dedication and expertise in empowering women to lead
+                        healthier lives.
+
+                    </p>
+                   
+                    <a href="/about" class="btn-flip" data-back="lets go!!!" data-front="Read More"></a>
+                </div>
+                <div class="about-right-col">
+                    <img src="img/calculate-img.png">
+                </div>
+            </div>
+        </section>
+        <!-- PRICING -->
+        <section class="pricing section" id="pricing">
+            <div class="container">
+                <div class="section__data">
+                    <h2 class="section__subtitle">Pricing</h2>
+                    <div class="section__titles">
+                        <h1 class="section__title-border">OUR</h1>
+                        <h1 class="section__title">SPECIAL PLAN</h1>
+                    </div>
+                </div>
+                <div class="pricing__container grid">
+                    <article class="pricing__card">
+                        <header class="pricing__header">
+                            <div class="pricing__shape">
+                                <img src="img/pricing1.png" alt="pricing image" class="pricing__img">
+                            </div>
+
+                            <h1 class="pricing__title">BASIC PACKAGE</h1>
+                            <h2 class="pricing__number">₹1500</h2>
+                        </header>
+
+                        <ul class="pricing__list">
+                            <li class="pricing__item">
+                                <i class="ri-checkbox-circle-line">5 Days In A Week</i>
+                            </li>
+                            <li class="pricing__item">
+                                <i class="ri-checkbox-circle-line">Daily Exercise</i>
+                            </li>
+                            <li class="pricing__item ">
+                                <i class="ri-checkbox-circle-line">Live Workshop </i>
+                            </li>
+                            <li class="pricing__item ">
+                                <i class="ri-checkbox-circle-line">Personal Interaction</i>
+                            </li>
+                            <li class="pricing__item ">
+                                <i class="ri-checkbox-circle-line">Custom Diets</i>
+                            </li>
+                        </ul>
+
+                        
+                        <a href="/openpayment?plan=basic" class="button button__flex pricing__button" data-amount="500">
+                            Purchase Now <i class="ri-arrow-right-line"></i>
+                        </a>
+                        
+                    
+                    </article>
+
+                    <article class="pricing__card pricing__card-active">
+                        <header class="pricing__header">
+                            <div class="pricing__shape">
+                                <img src="img/pricing2.png" alt="pricing image" class="pricing__img">
+                            </div>
+
+                            <h1 class="pricing__title">PREMIUM PACKAGE</h1>
+                            <h2 class="pricing__number">₹4500</h2>
+                        </header>
+
+                        <ul class="pricing__list">
+                            <li class="pricing__item">
+                                <i class="ri-checkbox-circle-line">5 Days In A Week</i>
+                            </li>
+                            <li class="pricing__item">
+                                <i class="ri-checkbox-circle-line">Daily Exercise</i>
+                            </li>
+                            <li class="pricing__item ">
+                                <i class="ri-checkbox-circle-line">Live Workshop </i>
+                            </li>
+                            <li class="pricing__item ">
+                                <i class="ri-checkbox-circle-line">Personal Interaction</i>
+                            </li>
+                            <li class="pricing__item ">
+                                <i class="ri-checkbox-circle-line">Custom Diets</i>
+                            </li>
+                        </ul>
+
+                             
+                        <a href="/openpayment?plan=premium" class="button button__flex pricing__button" data-amount="1000">
+                            Purchase Now <i class="ri-arrow-right-line"></i>
+                        </a>
+                    </article>
+                    <article class="pricing__card">
+                        <header class="pricing__header">
+                            <div class="pricing__shape">
+                                <img src="img/pricing3.png" alt="pricing image" class="pricing__img">
+                            </div>
+
+                            <h1 class="pricing__title">DIAMOND PACKAGE</h1>
+                            <h2 class="pricing__number">₹9000</h2>
+                        </header>
+
+                        <ul class="pricing__list">
+                            <li class="pricing__item">
+                                <i class="ri-checkbox-circle-line">5 Days In A Week</i>
+                            </li>
+                            <li class="pricing__item">
+                                <i class="ri-checkbox-circle-line">Daily Exercise</i>
+                            </li>
+                            <li class="pricing__item ">
+                                <i class="ri-checkbox-circle-line">Live Workshop </i>
+                            </li>
+                            <li class="pricing__item ">
+                                <i class="ri-checkbox-circle-line">Personal Interaction</i>
+                            </li>
+                            <li class="pricing__item ">
+                                <i class="ri-checkbox-circle-line">Custom Diets</i>
+                            </li>
+                        </ul>
+
+                        <a href="/openpayment?plan=diamond" class="button button__flex pricing__button" data-amount="1500">
+                            Purchase Now <i class="ri-arrow-right-line"></i>
+                        </a>
+
+                    </article>
+                </div>
+            </div>
+            
+        </section>
+
+ <!-- REVIEWS -->
+ <section class="testimonial_area" id="review">
+    <div class="section__data">
+        <h2 class="section__subtitle">Review</h2>
+        <div class="section__titles">
+            <h1 class="section__title-border">OUR</h1>
+            <h1 class="section__title">CLIENTS FEEDBACK</h1>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="testimonial_slider_area text-center owl-carousel">
+                    <div class="box-area">
+                        <div class="img-area">
+                            <img src="../img/woman.jpg">
+                        </div>
+                        <h5>Ridima</h5>
+                        <span>Designation Goes Here</span>
+                        <p class="content">
+                          Hey I am Ridima , When I joined I was 70.5 kg Today I am 65.8
+                          In inches also From XL size I have come to M size.
+                          Mam Seriously Very very Lucky to have You In our life
+                          Along with body toning My mind toning is done automatically
+                          Thanku so much for making me meet Myself 
+                        </p>
+                    </div>
+
+                    <div class="box-area">
+                        <div class="img-area">
+                            <img src="../img/man.jpg">
+                        </div>
+                        <h5>Kumar</h5>
+                        <span>Designation Goes Here</span>
+                        <p class="content">
+                            Hey Gita, thanks to you, my diabetes levels are now normal. 
+                            I feel more energized with less sleep. Doctor reduced medicines by 50%. 
+                            and I'm experiencing positive changes in various aspects of my health
+                            Life-changing decision to join your class. Thank you! 🙂
+                        </p>
+                    </div>
+
+                    <div class="box-area">
+                        <div class="img-area">
+                            <img src="../img/woman.jpg">
+                        </div>
+                        <h5>Sonal</h5>
+                        <span>Designation Goes Here</span>
+                        <p class="content">
+                            Achieved great results from June to October. I went from 72 kg to 59 kg, all thanks to Geetanjali Kandale.
+                             I'm so fit now that people are often surprised when they see me.
+                             Maintaining a healthy diet and regular exercise is crucial for my well-being.
+                              Never neglect your mental health.
+                        </p>
+                    </div>
+
+                    <div class="box-area">
+                        <div class="img-area">
+                            <img src="../img/man.jpg">
+                        </div>
+                        <h5>Harshal</h5>
+                        <span>Designation Goes Here</span>
+                        <p class="content">
+                          Hey I am Harshal , Geetanjali, your guidance has transformed my life. 
+                          With normalized diabetes levels, increased energy on less sleep, and a 50% reduction in medication,
+                           I owe it all to your classes. 
+                          It's been a life-changing decision, and I can't thank you enough! 🙂
+                        </p>
+                    </div>
+
+                    <div class="box-area">
+                        <div class="img-area">
+                            <img src="../img/woman.jpg">
+                        </div>
+                        <h5>Rupali</h5>
+                        <span>Designation Goes Here</span>
+                        <p class="content">
+                          Hey I am Ruplai ,I am following diet plan mam u said update ur weight on Friday. 
+                          Today is Thursday today I am 66.80😍😍very very happy.
+                           Since last 8 days with my Dr's permission I m talking HALF BP tabet. My BP is normal
+                          Thanku so much for making me meet Myself 
+                        </p>
+                    </div>
+
+                    <div class="box-area">
+                        <div class="img-area">
+                            <img src="../img/man.jpg">
+                        </div>
+                        <h5>Raman</h5>
+                        <span>Designation Goes Here</span>
+                        <p class="content">
+                            Joined class last year, weighed 67 kg. Lost 10 kg in a year. Weight remains constant now. 
+                            Joined class after a 2-month break, still no weight gain. 
+                            In Geeta's class for 1.5 years, solved many problems. 
+                            Gained muscle strength, energy, and overall happiness and health.
+                        </p>
+                    </div>
+
+
+                    <div class="box-area">
+                        <div class="img-area">
+                            <img src="../img/woman.jpg">
+                        </div>
+                        <h5>Pornima</h5>
+                        <span>Designation Goes Here</span>
+                        <p class="content">
+                            Hey I am Pornima , When I joined I was 70.5 kg Today I am 65.8
+                            In inches also From XL size I have come to M size.
+                            Mam Seriously Very very Lucky to have You In our life
+                            Along with body toning My mind toning is done automatically
+                            Thanku so much for making me meet Myself 
+                        </p>
+                    </div>
+
+                    <div class="box-area">
+                        <div class="img-area">
+                            <img src="../img/woman.jpg">
+                        </div>
+                        <h5>Mauri</h5>
+                        <span>Designation Goes Here</span>
+                        <p class="content">
+                            Hey I am Mauri , Hi, I went to my doctor, and he's pleased with my progress. 
+                            He suggested reducing my Tyronorm dosage from 50 to 25. 
+                            We'll monitor for three months and adjust based on the blood test results. 
+                            Grateful for the positive changes happening for me. 
+                        </p>
+                    </div>
+
+                    <div class="box-area">
+                        <div class="img-area">
+                            <img src="../img/woman.jpg">
+                        </div>
+                        <h5>Dipti</h5>
+                        <span>Designation Goes Here</span>
+                        <p class="content">
+                            Hey I am Dipti , Hi mam visited to my Dr. He is very happy. 
+                            He said make ur Tyronorm with power 25 instead of 50.
+                             We will observe for 3 months then after blood test will do necessary changes. Thanks mam🙏🏻. 
+                             M very happy everything working together for me😊
+                        </p>
+                    </div>
+
+                    <div class="box-area">
+                        <div class="img-area">
+                            <img src="../img/woman.jpg">
+                        </div>
+                        <h5>Riddhi</h5>
+                        <span>Designation Goes Here</span>
+                        <p class="content">
+                            Hey I am Riddhi , Good morning! I've been diligently following the diet plan. 
+                            As per your advice, I update my weight on Fridays, but today is Thursday, and 
+                            with my doctor's approval, I've been taking half of the prescribed blood pressure tablet, 
+                            and my blood pressure is now normal. 👍
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+
+        <!-- CALCULATE -->
+        <section class="calculate section">
+            <div class="calculate__container container grid">
+                <div class="calculate__content">
+                    <div class="section__titles">
+                        <h1 class="section__title-border">CALCULATE</h1>
+                        <h1 class="section__title">YOUR BMI</h1>
+                    </div>
+                    <p class="calculate__description">
+                        The body mass index (BMI) calculator calculates
+                        body mass index from your weight and height.</p>
+                    <form action="" class="calculate__form" id="calculate-form">
+                        <div class="calculate__box">
+                            <input type="number" placeholder="Height" class="calculate__input " id="calculate-cm">
+                            <label for="" class="calculate__label">cm</label>
+                        </div>
+                        <div class="calculate__box">
+                            <input type="number" placeholder="Weight" class="calculate__input " id="calculate-kg">
+                            <label for="" class="calculate__label">kg</label>
+
+                        </div>
+                        <button type="submit" class="button button__flex myButton" data-notification-text="Your BMI is Calculated💪" > 
+                            Calculate Now <i class="ri-arrow-right-line"></i>
+                        </button>
+                    </form>
+                    <p class="calculate__message" id="calculate-message"></p>
+                </div>
+                <img src="img/calculate-img.png" alt="calculate-img" class="calculate__img">
+            </div>
+        </section>
+    </main>
+    <!-- FOOTER -->
+    <footer class="footer section" id="footer">
+        <div class="footer__container container grid">
+            <div>
+                <a href="#" class="footer__logo">
+                    <img src="./img/new yoga icon.png" alt="" /> Geetanjali Fitness
+                </a>
+                <p class="footer__description">
+                    Subscribe for company <br />
+                    updates below.
+                </p>
+                <form action="" class="footer__form" id="contact-form">
+                    <input type="email" name="user_email" placeholder="Your Email" class="footer__input"
+                        id="contact-user" />
+                    <button type="submit" class="button">
+                        Subscribe
+                    </button>
+                </form>
+                <p class="footer__message" id="contact-message"></p>
+            </div>
+
+            <div class="footer__content">
+                <div>
+                    <h3 class="footer__title">SERVICES</h3>
+                    <ul class="footer__links">
+                        <li>
+                            <a href="/exercise" class="footer__links">Exercise</a>
+                        </li>
+                        <li>
+                            <a href="/yoga" class="footer__links">Yoga</a>
+                        </li>
+                        <li>
+                            <a href="/meditation" class="footer__links">Meditation</a>
+                        </li>
+                        <li>
+                            <a href="/weight" class="footer__links">Weight Lifting</a>
+                        </li>
+                        <li>
+                            <a href="/trataka" class="footer__links">Trataka</a>
+                        </li>
+                        <li>
+                            <a href="/cardio" class="footer__links">Cardio</a>
+                        </li>
+                        <li>
+                            <a href="/pranayam" class="footer__links">Pranayam</a>
+                        </li>
+                        <li>
+                            <a href="/laghu" class="footer__links">Panchkarma</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="footer__title">PRICING</h3>
+                    <ul class="footer__links">
+                        <li>
+                            <a href="#pricing" class="footer__links">Basic</a>
+                        </li>
+                        <li>
+                            <a href="#pricing" class="footer__links">Premium</a>
+                        </li>
+                        <li>
+                            <a href="#pricing" class="footer__links">Diamond</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="footer__title">Assistance</h3>
+                    <ul class="footer__links">
+                        <li>
+                            <a href="#home" class="footer__links">Home </a>
+                        </li>
+                        <li>
+                            <a href="#program" class="footer__links">Program</a>
+                        </li>
+                        <li>
+                            <a href="#choose" class="footer__links">Choose</a>
+                        </li>
+                        <li>
+                            <a href="#about" class="footer__links">About</a>
+                        </li>
+                        <li>
+                            <a href="#pricing" class="footer__links">Pricing</a>
+                        </li>
+                        <li>
+                            <a href="#review" class="footer__links">Review</a>
+                        </li>
+                        <li>
+                            <a href="/account" class="footer__links">Dashboard</a>
+                        </li>
+                        <li>
+                            <a href="/mytemplate" class="footer__links">Register</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="footer__group">
+                <ul class="footer__social">
+                    <a href="https://www.facebook.com/" target="blank" class="footer__social-link">
+                        <i class="ri-facebook-circle-fill"></i>
+                    </a>
+                    <a href="https://www.instagram.com/" target="blank" class="footer__social-link">
+                        <i class="ri-instagram-line"></i>
+                    </a>
+                    <a href="https://youtube.com/" target="blank" class="footer__social-link">
+                        <i class="ri-youtube-fill"></i>
+                    </a>
+                </ul>
+
+                <span class="footer__copy">
+                    &#169; Copyright <span>D4-developers.</span> All rights reserved
+                </span>
+
+            </div>
+        </div>
+    </footer>
+    <!-- SCROLL UP -->
+    <a href="#" class="scrollup" id="scroll-up">
+        <i class="ri-arrow-up-line"></i>
+    </a>
+
+    <!-- EMAIL JS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <!-- SCROLL REVEAL -->
+    <script src="js/scrollreveal.min.js"></script>
+
+
+    <script src="/views/JS/index.js"></script>
+
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const buttons = document.querySelectorAll(".myButton");
+            
+          
+            buttons.forEach(button => {
+              button.addEventListener("click", () => {
+                const notificationText = button.getAttribute("data-notification-text");
+          
+                Notification.requestPermission().then(perm => {
+                  if (perm === "granted") {
+                    const options = {
+                      body: notificationText,
+                      icon: "icon.png", // Replace with the correct path to your image
+                    };
+          
+                    const notification = new Notification("Welcome To Geetanjali Yoga & Fitness Zone", options);
+                   
+                    // Automatically close this notification after a specific duration (e.g., 3000 milliseconds)
+                    setTimeout(() => {
+                      notification.close();
+                    }, 3000);
+                  }
+                });
+              });
+            });
+          });            
+    </script>
+   
+
+</body>
+
+</html>

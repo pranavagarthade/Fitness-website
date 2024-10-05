@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="shortcut icon" href="img/web yoga icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/views/CSS/success.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row">
+                    <div
+                        class="receipt-main col-xs-10 col-sm-10 col-md-6 col-xs-offset-1 col-sm-offset-1 col-md-offset-3">
+                        <div class="row">
+                            <div class="receipt-header">
+                                <div class="col-xs-6 col-sm-6 col-md-6">
+                                    <div class="receipt-left">
+                                        <img class="img-responsive" src="img/new yoga icon.png" alt="logo"
+                                            style="width: 71px; border-radius: 43px;">
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 col-sm-6 col-md-6 text-right">
+                                    <div class="receipt-right">
+                                        <h5>Geetanjali Fitness.</h5>
+                                        <p>+91 8898476506 <i class="fa fa-phone"></i></p>
+                                        <p>geeta@gmail.com <i class="fa fa-envelope-o"></i></p>
+                                        <p>INDIA <i class="fa fa-location-arrow"></i></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="receipt-header receipt-header-mid">
+                                <div class="col-xs-8 col-sm-8 col-md-8 text-left">
+                                    <div class="receipt-right">
+                                        <h5>
+                                            <%= name %>
+                                        </h5>
+                                        <p><b>Mobile :</b> +91 <%= contact %>
+                                        </p>
+                                        <p><b>Email :</b>
+                                            <%= email %>
+                                        </p>
+                                        <p><b>Address :</b> New York, USA</p>
+                                    </div>
+                                </div>
+                                <div class="col-xs-4 col-sm-4 col-md-4">
+                                    <div class "receipt-left">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Description</th>
+                                        <th>Amount</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="col-md-9">Payment for <%= plan %> Plan</td>
+                                        <td class="col-md-3"><i class="fa fa-inr"></i>
+                                            <%= planAmount / 100 %>/-
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="text-right">
+                                            <p>
+                                                <strong>Total Amount: </strong>
+                                            </p>
+                                            
+                                            <p>
+                                                <strong>Payable Amount: </strong>
+                                            </p>
+                                            <p>
+                                                <strong>Balance Due: </strong>
+                                            </p>
+                                        </td>
+                                        <td>
+                                            <p>
+                                                <strong><i class="fa fa-inr"></i>
+                                                    <%= planAmount / 100 %>/-
+                                                </strong>
+                                            </p>
+                                            
+                                            <p>
+                                                <strong><i class="fa fa-inr"></i>
+                                                    <%= planAmount / 100 %>/-
+                                                </strong>
+                                            </p>
+                                            <p>
+                                                <strong><i class="fa fa-inr"></i> 00/-</strong>
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-right">
+                                            <h2><strong>Total: </strong></h2>
+                                        </td>
+                                        <td class="text-left text-danger">
+                                            <h2><strong><i class="fa fa-inr"></i>
+                                                    <%= planAmount / 100 %>.00/-
+                                                </strong></h2>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="row">
+                            <div class="receipt-header receipt-header-mid receipt-footer">
+                                <div class="col-xs-8 col-sm-8 col-md-8 text-left">
+                                    <div class="receipt-right">
+                                        <p><b>Date :</b> <span id="current-date"></span>
+                                        </p>
+                                        <h5 style="color: rgb(140, 140, 140);">Thanks for Purchase.!</h5>
+                                    </div>
+                                </div>
+                                <div class="col-xs-4 col-sm-4 col-md-4">
+                                    <div class "receipt-left">
+
+                                        <form action="/paymentdone" method="post">
+                                            <input type="hidden" name="amount" value="<%= planAmount / 100 %>">
+                                            <input type="hidden" name="plan" value="<%= plan %>">
+                                            <button type="submit" id="doneButton" class="btn">
+                                                <h1>Stamp</h1>
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                          <p style="color: blue;">You will be redirected to another page in <span style="color: red;" id="countdown">5 </span> seconds.</p>
+
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="/views/JS/success.js"></script>
+</body>
+
+</html>

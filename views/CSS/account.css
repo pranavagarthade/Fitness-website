@@ -1,0 +1,589 @@
+:root {
+    --main-color: #b518d1;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+    text-decoration: none;
+    transition: all .2s ease-in-out;
+}
+
+/* Set font size based on the root element */
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+/* Body styles */
+body {
+    background: #f7f7f7;
+    padding-left: 30rem;
+}
+
+/* Header styles */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    background: #2a2a2a;
+    justify-content: space-between;
+    z-index: 1000;
+    flex-flow: column;
+    padding: 8rem 2rem;
+    width: 30rem;
+    text-align: center;
+}
+
+header .logo {
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 1.8rem;
+    font-weight: bolder;
+    margin-bottom: 20px;
+}
+
+header .logo span {
+    text-transform: uppercase;
+    color: #b518d1;
+    /* Main color */
+}
+
+header .navbar a {
+    display: block;
+    font-size: 2.2rem;
+    color: #fff;
+    margin-top: 30px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #b518d1;
+    /* Main color */
+    border: none;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
+}
+
+header .navbar a:hover {
+    background-color: #89089f;
+    /* Darker shade of main color */
+    color: #fff;
+    transform: scale(1.05);
+    /* Add a scaling effect on hover */
+}
+
+/* Add a subtle shadow to the header */
+header {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+header .follow {
+    padding-top: 40px;
+}
+
+header .follow a {
+    font-size: 1.7rem;
+    color: #fff;
+    margin: 0 .7rem;
+    transition: color 0.2s;
+}
+
+header .follow a:hover {
+    color: red;
+}
+
+/* Image styles */
+img {
+    height: 40px;
+    width: 40px;
+    display: inline;
+    margin-bottom: 10px;
+}
+
+/* Menu bars styles */
+#menu-bars {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 10000;
+    background: var(--main-color);
+    color: #f7f7f7;
+    border-radius: .5rem;
+    padding: 1rem 1.5rem;
+    font-size: 3rem;
+    cursor: pointer;
+    display: none;
+    transition: background-color 0.3s;
+}
+
+#menu-bars:hover {
+    background-color: #89089f;
+}
+
+/* Section styles */
+section {
+    padding: 1rem 5%;
+    min-height: 100vh;
+}
+
+.outer {
+    font-size: 30px;
+    text-align: center;
+}
+
+.isko {
+    color: #b518d1;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.isko span {
+    color: #000;
+}
+
+/* .info {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.info p {
+    background-color: rgb(230, 230, 230);
+    border-radius: 15px;
+    padding: 10px 20px;
+    margin: 5px 0;
+    font-size: 24px;
+} */
+.info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.info > .first-div {
+    width: calc(50% - 20px); /* 20px is the total margin space */
+    background-color: rgb(236, 204, 243);
+    padding: 20px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    font-size:20px;
+    border-radius: 5%;
+}
+/* .first-div{
+    width: calc(33.33% - 20px);
+    background-color: rgb(236, 204, 243);
+    padding: 20px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    font-size:20px;
+    border-radius: 10%;
+} */
+.pp img {
+    height: 100px; /* Set the desired height */
+    width: 100px;  /* Set the desired width */
+    border-radius: 50%; /* Optional: to make it a circle */
+}
+.information .baju{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: flex-start; /* Align items to the left */
+    
+}
+#name-span{
+    font-size: 20px;
+    color: #89089f;
+}
+.but {
+    position: relative;
+    left: 08%;
+    transform: translateX(-50%);
+    bottom: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+}
+
+.but a {
+    display: block;
+    padding: 15px 30px;
+    background-color: #b518d1;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.but a:hover {
+    background-color: #89089f;
+}
+
+/* .isko {
+    padding-right: 15%;
+    text-align: center;
+} */
+
+.plancss {
+    font-size: 16px;
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 1800px;
+    /* Adjust as needed */
+    margin: 0 auto;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.plancss th,
+.plancss td {
+    border: 2px solid #5c5555;
+    padding: 25px;
+    text-align: left;
+
+}
+
+.plancss th {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.plancss tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.plancss span {
+    font-weight: bold;
+    display: block;
+    color: #ff0000;
+}
+
+form {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    box-sizing: border-box;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    height: 500px; /* Adjust the height as needed */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+label {
+    font-size: 1.5rem;
+    color: #333;
+}
+
+textarea {
+    width: 100%;
+    resize: none;
+    border:2px solid #6f6f6f;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    height: 350px; /* Adjust the height as needed */
+}
+
+.input {
+    width: 100%;
+    background-color: #b518d1;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1.5rem;
+}
+
+.input:hover {
+    background-color: #89089f;
+}
+.contact{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 span {
+    color: #000;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+h2 {
+    font-size: 34px;
+    color: #333;
+}
+
+ol {
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 10px;
+    font-size: 20px;
+    color: #333;
+}
+.display {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.display > div {
+    width: calc(33.33% - 20px); /* 20px is the total margin space */
+    background-color: rgb(236, 204, 243);
+    padding: 20px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    font-size:20px;
+    border-radius: 10%;
+}
+ .second-div{
+    width: calc(50% - 20px);
+    padding: 20px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    font-size:20px;
+    border-radius: 10%;
+} 
+
+  #app {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 200px);
+    padding: 12px;
+    gap: 12px;
+  }
+  
+  .note {
+    height: 200px;
+    box-sizing: border-box;
+    padding: 16px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 7px rgba(255, 0, 0, 0.15);
+    resize: none;
+    font-family: sans-serif;
+    font-size: 16px;
+  }
+  
+  .add-note {
+    height: 200px;
+    border: none;
+    outline: none;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    font-size: 120px;
+    color: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  
+  .add-note:hover {
+    background: rgba(0, 0, 0, 0.2);
+  }
+  
+
+@media (max-width: 911px) {
+    html {
+        font-size: 55%;
+    }
+
+    body {
+        padding: 0;
+    }
+
+    img {
+        height: 100px;
+        width: 100px;
+    }
+
+    #menu-bars {
+        display: initial;
+    }
+
+    header {
+        left: -120%;
+    }
+
+    header.active {
+        left: 0%;
+    }
+
+    .outer {
+        font-size: 25px;
+    }
+    .info{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .but{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .info p {
+        font-size: 18px;
+    }
+    .but{
+        position: relative;
+    }
+
+    .but a {
+        padding: 12px 24px;
+    }
+
+    .plancss {
+        font-size: 14px;
+    }
+    form {
+        padding: 1rem;
+    }
+
+    label {
+        font-size: 1.3rem;
+    }
+    h2 {
+        font-size: 24px;
+    }
+
+    li {
+        font-size: 18px;
+    }
+    .display > div {
+        width: calc(50% - 12px);
+    }
+    .info > div,
+    .first-div {
+        width: calc(50% - 12px); /* 20px is the total margin space */
+    }
+
+    .pp img {
+        height: 120px; /* Adjust height for smaller screens */
+        width: 120px;  /* Adjust width for smaller screens */
+    }
+}
+
+@media (max-width: 450px) {
+    html {
+        font-size: 50%;
+    }
+
+    .outer {
+        font-size: 18px;
+    }
+
+    .but {
+        position: relative;
+        top: 85%;
+        left: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .info p {
+        font-size: 20px;
+    }
+
+    .but a {
+        padding: 10px 20px;
+        font-size: 25px;
+    }
+
+    .plancss {
+        font-size: 12px;
+    }
+    label {
+        font-size: 1.2rem;
+    }
+    .contact{
+        margin-top: 30px;
+    }
+    ol {
+        padding-left: 10px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    li {
+        font-size: 16px;
+    }
+    #my-works {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .square {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+    #my-works {
+        flex-direction: column;
+        align-items: center;
+  
+    }
+    .display {
+        flex-direction: column;
+        gap: 10px;
+
+    }
+
+    .display > div {
+        width: 100%;
+
+    }
+    .info,
+    .first-div {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center items horizontally */
+    }
+
+    .info >
+    .first-div{
+        width: 100%; /* Full width for smaller screens */
+    }
+
+    .pp img {
+        height: 100px; /* Adjust height for even smaller screens */
+        width: 100px;  /* Adjust width for even smaller screens */
+    }
+    .info > .second-div{
+        width: 100%;
+    }
+    .middlele{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

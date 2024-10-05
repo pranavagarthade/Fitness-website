@@ -1,0 +1,55 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    display: inline-block;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.benefits {
+    margin-top: 50px;
+    background-color: #f0e7f9; /* Light purple background */
+    padding: 40px; /* Add some padding for better content separation */
+    border-radius: 15px; /* Rounded corners */
+}
+
+.benefits-text {
+    position: relative;
+    top: 10%;
+    left: 0;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #333; /* Dark text color */
+}
+
+img.img-fluid {
+    border-radius: 10%;
+    margin-top: 20px;
+}
+
+/* Styling for exercise types */
+.exercise-types ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.exercise-types ul li {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #666; /* Slightly darker text color */
+}

@@ -1,0 +1,320 @@
+/* GOOGLE FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Red+Hat+Display:wght@400;700;900&display=swap');
+
+/* VARIABLES CSS */
+:root {
+    --header-height: 3.5rem;
+    --first-color: hsl(282, 72%, 55%);
+    --first-color-light: hsl(282, 75%, 75%);
+    --first-color-alt: hsl(282, 61%, 46%);
+    --first-color-dark: hsl(282, 66%, 41%);
+    --first-color-gray: hsl(40, 6%, 64%);
+    --title-color: hsl(180, 4%, 98%);
+    --title-color-black: hsl(180, 4%, 12%);
+    --text-color: hsl(180, 4%, 72%);
+    --text-color-light: hsl(180, 4%, 65%);
+    --body-color: hsl(180, 12%, 8%);
+
+    /* FONT AND TYPOGRAPHY */
+    --body-font: 'Red Hat Display', sans-serif;
+    --second-font: 'Kaushan Script', cursive;
+    --biggest-font-size: 2rem;
+    --bigger-font-size: 1.5rem;
+    --big-font-size: 1.2rem;
+    --h1-font-size: 1.5rem;
+    --h2-font-size: 1.25rem;
+    --h3-font-size: 1rem;
+    --normal-font-size: .938rem;
+    --small-font-size: .813rem;
+    --smaller-font-size: .75rem;
+
+    /* FONT WEIGHT */
+    --font-bold: 700;
+    --font-black: 900;
+
+    /* Z-INDEX */
+    --z-tooltip: 10;
+    --z-fixed: 100;
+}
+
+/* RESPONSIVE TYPOGRAPHY */
+@media screen and (min-width: 1024px) {
+    :root {
+        --biggest-font-size: 6rem;
+        --bigger-font-size: 3.5rem;
+        --big-font-size: 2.75rem;
+        --h1-font-size: 2.25rem;
+        --h2-font-size: 1.5rem;
+        --h3-font-size: 1.25rem;
+        --normal-font-size: 1rem;
+        --small-font-size: .875rem;
+        --smaller-font-size: .813rem;
+    }
+}
+
+/* BASE */
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body,
+button,
+input {
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+
+}
+
+body {
+    background-color: var(--body-color);
+    color: var(--text-color);
+}
+
+h1,
+h2,
+h3 {
+    color: var(--title-color);
+    font-weight: var(--font-bold);
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* REUSABLE CSS CLASSES */
+
+.container {
+    max-width: 1124px;
+    margin-right: 1.5rem;
+    margin-left: 1.5rem;
+}
+
+.section {
+    padding: 0.3rem 0 2rem;
+}
+
+.section__data {
+    display: flex;
+    flex-direction: column;
+    row-gap: .75rem;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.section__title,
+.section__title-border {
+    font-size: var(--big-font-size);
+    letter-spacing: 1.5px;
+}
+
+.section__subtitle {
+    font-size: var(--h2-font-size);
+    font-family: var(--second-font);
+    font-weight: 400;
+    letter-spacing: 1.5px;
+    color: var(--first-color);
+    transform: rotate(-2deg);
+   
+}
+
+.section__titles {
+    display: flex;
+    column-gap: .75rem;
+    justify-content: center;
+}
+
+.section__title-border {
+    -webkit-text-stroke: 1px var(--text-color);
+    color: transparent;
+}
+
+.grid {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.mian {
+    overflow: hidden;
+    /*FOR ANIMATION SCROLLREVEAL */
+}
+
+.color-red {
+    color: hsl(0, 80%, 64%);
+}
+
+.color-green {
+    /* color: var(--first-color); */
+    color: green;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.section {
+    min-height: 10vh;
+    /* background-image:linear-gradient(rgba(0,0,0,0.70),rgba(0,0,0,0.70)) url(https://imgs.search.brave.com/CCqg-hEGU4VB_rdZsp5m_WCBJp6xwycULAgf8qTSIUg/rs:fit:500:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzAyLzAwLzg3Lzg2/LzM2MF9GXzIwMDg3/ODY5MF9UY05GVmpE/N0ZxQVI5Z0FETVpy/Rzh5Z1hRcTg2b1Zp/Ny5qcGc); */
+    background: var(--body-color);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.hero {
+    width: 80%;
+    margin: auto;
+    padding: 30px 0px;
+}
+
+article h1 {
+    font-size: 50px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #fcb03f;
+}
+
+article h1::after {
+    content: "";
+    height: 3px;
+    width: 225px;
+    background-color: #fcb03f;
+    display: block;
+    margin: auto;
+}
+
+.simg {
+    margin: auto;
+    display: block;
+    margin-top: 1px;
+    margin-bottom: 20px;
+    height: 220px;
+    width: 220px;
+    border-radius: 50%;
+    border: 3px solid #bef4f7;
+}
+
+content {
+    font-size: 17px;
+    color: #ccc;
+    line-height: 1.5;
+}
+
+article h5 {
+    text-transform: uppercase;
+    font-size: 32px;
+    font-weight: 500;
+    margin-top: 30px;
+    color: #fcb03f;
+}
+
+article p {
+    font-size: 18px;
+    color: #fff;
+}
+
+#about {
+    padding: 100px 0px;
+    background: var(--body-color);
+}
+
+.about-row {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.about-left-col {
+    flex-basis: 50%;
+
+}
+
+.about-right-col {
+    flex-basis: 50%;
+    text-align: center;
+}
+
+.about-right-col img {
+    width: 560px;
+    height: 350px;
+    border: 4px solid var(--first-color);
+}
+
+.about-left-col {
+    max-width: 400px;
+    margin: auto;
+}
+
+
+.about-left-col h1 {
+    font-size: 50px;
+}
+
+.about-left-col p {
+    font-size: 20px;
+    text-align: justify;
+    margin: 15px 0px;
+}
+
+
+/* Media Query for Screens Smaller than 768px */
+/* Media Query for Screens Smaller than 768px */
+@media screen and (max-width: 768px) {
+    .about-row {
+        flex-direction: column;
+        /* Change to column layout for smaller screens */
+    }
+
+    .about-left-col,
+    .about-right-col {
+        flex-basis: 100%;
+        text-align: center;
+    }
+
+    .about-right-col img {
+        width: 100%;
+        height: auto;
+        border: 4px solid var(--first-color);
+        margin-bottom: 20px;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .about-left-col,
+    .about-right-col {
+        margin-bottom: 20px;
+        margin-left: 20px;
+        margin-right: 20px; /* Add margin to separate the paragraphs */
+    }
+
+    /* Reverse order for odd rows */
+    .about-row:nth-child(odd) {
+        flex-direction: column-reverse;
+    }
+    
+    .about-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}

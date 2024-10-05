@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/web yoga icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+        crossorigin="anonymous" />
+
+    <title>
+
+    </title>
+    <link rel="stylesheet" href="/views/CSS/account.css">
+    <link rel="shortcut icon" href="img/web yoga icon.png" type="image/x-icon">
+
+</head>
+
+<body>
+    <div id="menu-bars" class="fas fa-bars"></div>
+    <header>
+        <img src="/img/web yoga icon.png" alt="image">
+        <a href="#" class="logo"><span>Geetanjali</span> fitness</a>
+        <nav class="navbar">
+            <a href="#home">Profile</a>
+            <a href="#about">Diet plans</a>
+            <a href="#my-works">My current plan </a>
+            <a href="#contact">Contact</a>
+            <a href="#rules">Rules</a>
+        </nav>
+        <div class="follow">
+            <a href="logout">Logout</a>
+        </div>
+    </header>
+    <section id="home">
+        <div class="outer">
+            <div class="isko">
+                <h1>Welcome to <span>Your Account</span></h1>
+            </div><br>
+            <div class="info">
+                <div class="first-div">
+                    <div class="pp">
+                        <img src="../img/pp.jpg" alt="">
+                    </div>
+                    <div class="information">
+                        <p>
+                        <h1>
+                            <%= user.fullName || user.displayName || user.username %>
+                        </h1>
+                        </p><br>
+                        <div class="name">
+                            <h4 style="font-size: 20px;">
+                                <p class="baju" style="margin-bottom: 10px;"><span id="name-span">Email:</span>
+                                    <%= user.email %>
+                                </p>
+                                <p class="baju" style="margin-bottom: 10px;"><span id="name-span">Mobile number:</span>
+                                    <%= user.mobileNumber %>
+                                </p>
+                                <p class="baju" style="margin-bottom: 10px;"><span id="name-span">Gender:</span>
+                                    <%= user.gender %>
+                                </p>
+                                <p class="baju" style="margin-bottom: 10px;"><span id="name-span">Goal:</span>
+                                    <%= user.goal %>
+                                </p>
+                            </h4><br><br>
+                            <p style="margin-bottom: 10px; display: flex; flex-wrap: wrap; gap: 5px; justify-content: flex-start; text-align: left; width: 100%;"><span
+                                    style="color: red;">Note:</span>
+                                    "Click the 'Add Info' button to seamlessly add or update information. 
+                                    Efficiently streamline data management, knowing your entries are observed
+                                     by the instructor. Your details guide the personalized diet plan, ensuring
+                                      accuracy for optimal health and well-being."</p><br>
+                        </div>
+                    </div>
+                </div>
+                <div class="second-div">
+                    <div >
+                        <h1>Add your<span style="color: #89089f;"> Goals</span></h1>
+                    </div>
+                    <div class="middlele">
+                    <div id="app">
+                        <button class="add-note" type="button">+</button>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+        <div class="but">
+            <a class="btn btn-light btn-lg" href="/add-info" role="button">Add Info</a>
+        </div>
+
+    </section>
+    <section id="about">
+        <div class="isko">
+            <h1>Diet <span>Plan</span></h1>
+        </div><br>
+        <table class="plancss">
+            <tr>
+                <th><span>Morning (8:00 AM - 8:30 AM):</span></th>
+                <td>
+                    <%= user.morning %>
+                </td>
+            </tr>
+            <tr>
+                <th><span>Mid-Morning (10:00 AM):</span></th>
+                <td>
+                    <%= user.midMorning %>
+                </td>
+            </tr>
+            <tr>
+                <th><span>Lunch (12:00 PM):</span></th>
+                <td>
+                    <%= user.lunch %>
+                </td>
+            </tr>
+            <tr>
+                <th><span>Afternoon (2:00 PM):</span></th>
+                <td>
+                    <%= user.afternoon %>
+                </td>
+            </tr>
+            <tr>
+                <th><span>Snack (4:00 PM):</span></th>
+                <td>
+                    <%= user.snack %>
+                </td>
+            </tr>
+            <tr>
+                <th><span>Evening (6:00 PM):</span></th>
+                <td>
+                    <%= user.evening %>
+                </td>
+            </tr>
+            <tr>
+                <th><span>Dinner (8:00 PM):</span></th>
+                <td>
+                    <%= user.dinner %>
+                </td>
+            </tr>
+            <tr>
+                <th><span>Additional Notes:</span></th>
+                <td>
+                    <%= user.notes %>
+                </td>
+            </tr>
+        </table>
+
+    </section>
+    <section id="my-works">
+        <div class="isko">
+            <h1>My current<span> plan</span></h1>
+        </div><br><br>
+        <div class="display">
+            <div>
+                <div>
+                    <h1 style="font-size: 40px;">Plan<span style="color: #89089f;"> type</span></h1>
+                </div><br>
+                <div>
+                    <h2>Plan:</h2><br>
+                    <%=user.subscription.plan%>
+                        <p><span>Note:</span></p>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <h1 style="font-size: 40px;">Purchased<span style="color: #89089f;"> date</span></h1>
+                </div><br>
+                <div>
+                    <h2>start date:</h2><br>
+                    <%=user.subscription.startDate%>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <h1 style="font-size: 40px;">Ending<span style="color: #89089f;"> date</span></h1>
+                </div><br>
+                <div>
+                    <h2>end date:</h2><br>
+                    <%=user.subscription.endDate%>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="contact">
+        <div class="isko">
+            <h1>Get in <span>touch</span></h1>
+        </div><br><br>
+        <div class="contact">
+            <form action="/query" method="post" style="width: 100%; padding: 2rem; margin: 0; box-sizing: border-box;">
+                <label for="query" style="font-size: 20px;">Query/Issue:</label><br>
+                <textarea id="query" name="query" rows="8" style="width: 100%; resize: none;" required></textarea><br>
+                <p style="font-size: 20px;"><span style="color: red;">Note:</span>Please use this only if the
+                    query/issue is genune.</p><br>
+
+                <input type="submit" value="Submit" class="input" style="width: 100%;">
+            </form>
+        </div>
+    </section>
+    <section id="rules">
+        <div class="isko">
+            <h1>Rules to <span>Follow</span></h1>
+        </div><br>
+        <div class="container">
+            <h2>Classes Rules</h2><br>
+
+            <ol>
+                <h3>
+                    <li>Strictly follow the provided meal plan. If it doesn't suit you, contact us for adjustments.</li>
+                    <li>Avoid drinking water 30 minutes before and 1 hour after your main meals.</li>
+                    <li>Drink water only when you are thirsty; no need to force 5 liters a day.</li>
+                    <li>Take only a few sips of water at a time and always sit down while drinking.</li>
+                    <li>Ensure you get 8 hours of quality sleep for weight loss, healing, and relaxation.</li>
+                    <li>You can take a 1-hour nap (not more) after lunch (optional).</li>
+                    <li>Avoid sugar, maida, and excessive salt in your diet.</li>
+                    <li>Consume fruits in moderation due to their sugar content.</li>
+                    <li>Attend all classes as each day focuses on a specific body part.</li>
+                    <li>Allow for rest and relaxation, especially during heavy menstrual flow (2 days).</li>
+                    <li>Keep a yoga mat, napkin, and water bottles or dumbbells ready for daily activities.</li>
+                    <li>Strictly avoid milk and milk products.</li>
+                    <li>The fees paid are non-refundable; do not miss any classes.</li>
+                    <li>Classes are held from Monday to Friday; don't skip Friday's relaxation session.</li>
+                    <li>Take "before" pictures from the front and side angles wearing a tight t-shirt.</li>
+                    <li>Maintain a diary to track your weight post-workout daily or weekly.</li>
+                    <li>Measure your breast, waist, abdomen, and hip levels for progress tracking.</li>
+                    <li>Fast for a minimum of 12 hours daily, with no food after 8 PM until 8 AM the next day.</li>
+                    <li>We are here to support, motivate, and guide you, but your hard work, dedication, and desire to
+                        change are essential for transformation.</li>
+                </h3>
+            </ol>
+        </div>
+
+    </section>
+
+    <script src="/views/JS/account.js"></script>
+
+</body>
+
+
+</html>
